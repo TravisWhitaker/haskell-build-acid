@@ -1,0 +1,4 @@
+ACID_1 {
+	global: acid_init; acid_cleanup; acid;
+	local: *;
+};

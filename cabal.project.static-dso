@@ -1,0 +1,7 @@
+packages: .
+
+package *
+  ghc-options: -fPIC
+
+package haskell-build-acid
+  ghc-options: -pgml musl-embed-link

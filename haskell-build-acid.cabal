@@ -12,7 +12,7 @@ author:              Travis Whitaker
 maintainer:          pi.boy.travis@gmail.com
 copyright:           Travis Whitaker 2025
 category:            Testing
-extra-source-files:  CHANGELOG.md, README.md
+extra-source-files:  CHANGELOG.md, README.md, acid.map
 
 foreign-library acid
   type:             native-shared
@@ -23,6 +23,9 @@ foreign-library acid
   include-dirs:     include
   install-includes: acid.h
   c-sources:        cbits/acid.c
+  -- The exported symbols; see acid.map.
+  if os(linux)
+    ld-options:     -Wl,--version-script=acid.map
   build-depends:    base
                   , template-haskell
   default-language: Haskell2010
